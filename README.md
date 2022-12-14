@@ -1,4 +1,4 @@
-# projects
+# Projects
 Exercises from MOOCs etc.
 
 
