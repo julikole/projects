@@ -8,6 +8,8 @@ One of the exam exercises from the Udacity course "Intro to Programming" (JavaSc
 ## Adventure Game
 One of the exam exercises from the Udacity course "Intro to Programming" (Python). [Link](./python)
 
-## Animal Trading Cards
-One of the exam exercises from the Udacity course "Intro to Programming" (HTML & CSS). [Link](./html)
+## HTML and CSS
+Example excercises from Udacity and Udemy courses. [Link](./html)
 
+## Design
+This folder will contain various design tasks and ideas for web sites and applications. Now contains a single example. [Link](./html)
