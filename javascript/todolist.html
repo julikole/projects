@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>To-do list</title>
+    <style>
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+
+    <script>
+        const mainNode = document.getElementById('main');
+
+        let todos = [
+            {
+                text: 'buy milk',
+                completed: true,
+            },
+            {
+                text: 'learn JavaScript',
+                completed: false,
+            },
+            {
+                text: 'paint house',
+                completed: false,
+            }
+        ];
+
+        function renderHome () {
+            // replaces everything inside html. Generate + render markup
+            mainNode.innerHTML = `
+            <h1>Welcome!</h1>
+            <button id="showList"> Show todo list </button>
+            `;
+// add event listeners
+          const showListButtonNode = document.getElementById('showList');
+          showListButtonNode.addEventListener('click', function () {
+            renderList();
+          });
+        }
+// find necessary references, generate markup (based on state) + render to page
+        function renderList () {
+            let listItems = todos.map(function (todo, todoIndex) {
+                let itemClass = todo.completed ? "done" : "";
+                return `<li class="${itemClass}" id="${todoIndex}"> ${todo.text} </li>`;
+            });
+
+            mainNode.innerHTML = `
+            <h1>My todos!</h1>
+            <ul id="todos">
+                ${listItems.join("")}
+            </ul>
+            <input id="text" type="text" placeholder="new todo...">
+            <button id="add"> Add todo </button>
+            <button id="back"> Back </button>
+            `;
+// add necessary references 
+            const addTodoButtonNode = document.getElementById('add');
+            const todoInputNode = document.getElementById('text');
+            addTodoButtonNode.addEventListener('click', function() {
+                const newTodoText = todoInputNode.value;
+
+                todos.push({
+                    text: newTodoText,
+                    completed: false,
+                });
+                renderList();
+            });
+
+           const todoListNode = document.getElementById('todos');
+           todoListNode.addEventListener('click', function (event) {
+                const todoIndex = event.target.id;
+                todos[todoIndex].completed = !todos[todoIndex].completed;
+                renderList();
+           });
+
+           const backButtonNode = document.getElementById('back');
+           backButtonNode.addEventListener('click', function () {
+            renderHome();
+           })
+        }
+
+        renderHome();
+    </script>
+</body>
+</html>
