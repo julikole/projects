@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 50px;
+            height: 50px;
+            margin:10px;
+            display: inline-block;
+        }
+
+        .square {
+            border: 1px solid magenta;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <select name="color" id="color">
+            <option value="red" selected>Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="yellow">Yellow</option>
+        </select>
+        <select name="shape" id="shape">
+            <option value="square">Square</option>
+            <option value="circle">Circle</option>
+        </select>
+        <button id="add">Add shape</button>
+    </div>
+    <div id="shapes">
+
+    </div>
+    <script>
+        let colorSelectNode = document.getElementById('color');
+        let shapeSelectNode = document.getElementById('shape');
+        let addButtonNode = document.getElementById('add');
+        let shapesNode = document.getElementById('shapes');
+
+        let selectedColor = 'red';
+        let selectedShape = 'square'
+        colorSelectNode.addEventListener('change', function(event) {
+            selectedColor = event.target.value;
+        });
+
+        shapeSelectNode.addEventListener('change', function(event) {
+            selectedShape = event.target.value;
+        })
+
+        addButtonNode.addEventListener('click', function() {
+            let newShapeNode = document.createElement('div');
+            newShapeNode.classList.add('box');
+            newShapeNode.classList.add(selectedShape);
+            newShapeNode.style.backgroundColor = selectedColor;
+            shapesNode.append(newShapeNode);
+            // to remove shape on click:
+            newShapeNode.addEventListener('click', function (event) {
+                // if (event.target == event.currentTarget) { // this is to make sure you don't delete the whole container
+                //     return;
+                // }
+                event.target.remove();
+            });
+        });
+    </script>
+</body>
+</html>
