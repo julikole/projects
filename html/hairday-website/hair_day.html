@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Day</title>
+    <meta name="description" content="A brief description">
+    <meta name="author" content="Hair Day Hair Salon">
+
+    <link rel="stylesheet" href="hair_day.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;900&family=Roboto:wght@100;300;400&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            setCurrentDate()
+        });
+
+        function setCurrentDate() {
+            var now = new Date();
+            var day = ("0" + now.getDate()).slice(-2);
+            var month = ("0" + (now.getMonth() + 1)).slice(-2);
+            var today = now.getFullYear() + "-" + (month) + "-" + (day);
+            $('#booking').val(today);
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <img src="hd_logo.png" alt="Hair Day Logo">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="hair_day.html">HOME</a></li>
+            <li><a href="products.html">PRODUCTS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="about_us.html">ABOUT US</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="wide">
+            <article class="banner">
+                <h1>Christmas Special</h1>
+                <p>all colorings</p>
+                <p class="blinking">25% OFF!</p>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2>Booking</h2>
+                <p>Need a total makeover or just a little fresh up?</p>
+                <p>Christmas offer until the New Year's Eve - book your appointment now!</p>
+                <br>
+                <form>
+                    <label for="booking">Pick a date:</label>
+                    <input type="date" id="booking" name="booking">
+                    <br>
+                    <button type="submit">BOOK</button>
+                </form>
+            </article>
+            <article>
+                <h2>Inspiration</h2>
+                <div class="video">
+                    <iframe height="100%" max-width="100%" src="https://www.youtube.com/embed/1mI_2T9x-B4" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <br>
+                <p>We are posting new tutorials every week!</p>
+                <br>
+                <p><a href="https://www.youtube.com/results?search_query=hair+tutorial">Click here for more
+                        tutorials</a></p>
+            </article>
+            <article>
+                <h2>Location</h2>
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2914.343953421197!2d-89.40219784890441!3d43.07626369746018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8807acb561a49de9%3A0x3676069eb14d2a88!2s800%20Langdon%20St%2C%20Madison%2C%20WI%2053703%2C%20USA!5e0!3m2!1sno!2sno!4v1672350002154!5m2!1sno!2sno"
+                        max-width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <img src="simple_logo.png" alt="simplified Logo">
+        </div>
+        <div>
+            <p>Copyright Hair Day 2022</p>
+        </div>
+    </footer>
+</body>
+
+</html>
