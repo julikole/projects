@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    color: antiquewhite;
+    font-family: Roboto;
+}
+
+/* Logo at the top of the page*/
+
+header>img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 200px;
+    padding: 10px;
+    margin-bottom: 3rem;
+
+}
+
+/* Navigation menu  */
+
+nav ul {
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+nav li {
+    display: inline-block;
+}
+
+a {
+    color: #D0604C;
+    text-decoration: none;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+    font-family: Montserrat;
+    font-weight: 900;
+    padding: 2rem;
+}
+
+a:hover {
+    color: #F2E0D2;
+    text-decoration: underline;
+}
+
+/* Main section with text and photos  */
+
+section {
+    display: flex;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    padding: 2rem 2rem 2rem 0;
+    font-family: Montserrat;
+    font-weight: 400;
+}
+
+article {
+    flex: 1;
+    padding: 2rem;
+}
+
+section>div {
+    display: flex;
+    padding: 1rem;
+    margin: 1rem;
+    display: block;
+}
+
+figure img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Footer  */
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    font-family: Roboto;
+    color: rgba(242, 224, 210, 0.377);
+}
+
+footer div {
+    flex: 1;
+    margin-left: 15%;
+}
+
+footer img {
+    max-width: 100px;
+}
